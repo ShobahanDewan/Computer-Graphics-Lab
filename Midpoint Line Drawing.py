@@ -1,47 +1,57 @@
 import matplotlib.pyplot as plt
 
 
-def midpoint_circle(radius):
-    
-    x, y = 0, radius
-    p = 1 - radius  
-    
+def midpoint_line(x1, y1, x2, y2):
+  
+    dx = x2 - x1
+    dy = y2 - y1
 
+    
+    p = 2*dy - dx
     points = []
 
-  
-    def plot_points(x, y):
-        points.extend([
-            (x, y), (-x, y), (x, -y), (-x, -y), 
-            (y, x), (-y, x), (y, -x), (-y, -x)
-        ])
-    
+
+    if abs(dy) > abs(dx):
+        x1, y1, x2, y2 = y1, x1, y2, x2
+        dx, dy = dy, dx
+
  
-    plot_points(x, y)
+    if x1 > x2:
+        x1, x2 = x2, x1
+        y1, y2 = y2, y1
+
+ 
+    points.append((x1, y1))
     
-    while x < y:
-        
+
+    while x1 < x2:
+        x1 += 1
         if p < 0:
-            p = p + 2*x + 3
+            p = p + 2*dy
         else:
-            p = p + 2*(x - y) + 5
-            y -= 1
-        
-        x += 1
-        plot_points(x, y)
-    
+            if y1 < y2:
+                y1 += 1
+            else:
+                y1 -= 1
+            p = p + 2*(dy - dx)
+
+        points.append((x1, y1))
+
     return points
 
+x1, y1 = 0, 0  # Start point (x1, y1)
+x2, y2 = 20, 10  # End point (x2, y2)
 
-radius = 50
 
-circle_points = midpoint_circle(radius)
+line_points = midpoint_line(x1, y1, x2, y2)
 
-x_coords, y_coords = zip(*circle_points)
+
+x_coords, y_coords = zip(*line_points)
+
 
 plt.figure(figsize=(6, 6))
-plt.scatter(x_coords, y_coords, color='blue', s=1)
-plt.gca().set_aspect('equal', adjustable='box')
-plt.title("Midpoint Circle Drawing")
+plt.plot(x_coords, y_coords, color='blue', marker='o')  
+plt.title(f"Midpoint Line Drawing from ({x1},{y1}) to ({x2},{y2})")
 plt.grid(True)
+plt.gca().set_aspect('equal', adjustable='box')
 plt.show()
