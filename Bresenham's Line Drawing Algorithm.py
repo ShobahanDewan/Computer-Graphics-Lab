@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 x1 = int(input("Enter the value of x1: "))
 y1 = int(input("Enter the value of y1: "))
 x2 = int(input("Enter the value of x2: "))
