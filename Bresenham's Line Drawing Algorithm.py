@@ -8,7 +8,6 @@ y2 = int(input("Enter the value of y2: "))
 
 dy = y2 - y1
 dx = x2 - x1
-
 p0 = 2 * dy - dx
 
 if abs(dy) > abs(dx):
