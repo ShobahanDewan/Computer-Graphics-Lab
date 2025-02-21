@@ -8,7 +8,6 @@ def midpoint_circle(radius):
     
 
     points = []
-
   
     def plot_points(x, y):
         points.extend([
