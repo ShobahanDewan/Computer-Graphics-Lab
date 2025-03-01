@@ -3,8 +3,7 @@ import matplotlib.pyplot as plt
 def midpoint_circle(radius):
     
     x, y = 0, radius
-    p = 1 - radius  
-    
+    p = 1 - radius   
 
     points = []
   
