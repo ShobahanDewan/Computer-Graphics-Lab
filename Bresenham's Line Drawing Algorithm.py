@@ -10,7 +10,6 @@ dy = y2 - y1
 dx = x2 - x1
 p0 = 2 * dy - dx
 
-
 if abs(dy) > abs(dx):
     steps = abs(dx)
 else:
