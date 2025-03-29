@@ -13,6 +13,7 @@ else:
 xcor=[]
 ycor=[]
 
+
 i=0
 while i<steps:
   i=i+1
