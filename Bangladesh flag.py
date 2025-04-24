@@ -10,7 +10,6 @@ for i in range(2):
  t.left(90)
 t.end_fill()
 
-
 t.penup()
 t.forward(260)
 t.left(90)
