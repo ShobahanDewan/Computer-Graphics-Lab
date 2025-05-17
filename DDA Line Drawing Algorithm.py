@@ -8,6 +8,7 @@ dx=x2-x1
 m=dy/dx
 if dy>dx:
   steps=dy
+
 else:
   steps=dx
 xcor=[]
