@@ -6,7 +6,6 @@ y = r
 p = 1 - r
 
 points = []
-
 while x <= y:
 
     if p < 0:
